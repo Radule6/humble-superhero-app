@@ -105,14 +105,14 @@ The Humble Superhero API is a simple REST API designed to celebrate team members
  ┗ 📜 README.md
 ```
 
- ## API Endpoints:
+## API Endpoints:
 
- 1. POST /superheroes
-  - Request Body:
+1. POST /superheroes
+- Request Body:
   ```json
   {
     "name": "Captain Kindness",
-    "superpower": "Inspiring others",
+    "superpower": "Inspiring others", 
     "humilityScore": 9
   }
   ```
@@ -140,7 +140,7 @@ The Humble Superhero API is a simple REST API designed to celebrate team members
   ```
 
 
-# Collaboration Note
+## Collaboration Note
 - Use branches for each feature or bug fix
 - Open a PR for review
 - Would discuss the code before implementation major changes
@@ -149,7 +149,7 @@ The Humble Superhero API is a simple REST API designed to celebrate team members
 - Communication would be key to success, to separate the work and to make sure everyone is on the same page
 
 
-# If I had more time
+## If I had more time
 - I would have added more endpoints to the API, like updating and deleting a superhero, superhero search, superhere profile, etc.
 - I would have added more tests to the API, like unit tests for the backend and integration tests for the frontend.
 - Implement a real database, like PostgreSQL, MongoDB, etc.
