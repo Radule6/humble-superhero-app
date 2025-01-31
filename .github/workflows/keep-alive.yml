@@ -1,0 +1,12 @@
+name: Keep Render API Alive
+
+on:
+  schedule:
+    - cron: "*/10 * * * *" 
+
+jobs:
+  ping_api:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send request to Render API
+        run: curl -X GET "https://humble-superhero-app.onrender.com/api/v1/superheroes"
