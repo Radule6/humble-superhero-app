@@ -13,7 +13,7 @@ The Humble Superhero API is a simple REST API designed to celebrate team members
 - ✅ Two API Endpoints: POST /superheroes, GET /superheroes
 - ✅ Validation: Ensures humility score is between 1-10
 - ✅ Frontend React app to add and view superheroes
-- ✅ Unit Test: Jest test for one endpoint
+- ✅ Unit Test: Jest test for endpoints
 - ✅ Deployed on Render (Backend) & Vercel (Frontend)
 
 - Backend URL: https://humble-superhero-app.onrender.com/api/v1/
