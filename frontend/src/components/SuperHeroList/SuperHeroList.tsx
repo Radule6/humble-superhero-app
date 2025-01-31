@@ -26,7 +26,7 @@ const SuperHeroList = () => {
         </HeroCard>
       ))}
       {superheroes.length === 0 && (
-        <div>No superheroes found. Be the first to add one!</div>
+        <h3>No superheroes found. Be the first to add one!</h3>
       )}
     </ListContainer>
   );

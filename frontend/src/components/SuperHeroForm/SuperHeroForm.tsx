@@ -87,7 +87,7 @@ const SuperHeroForm = () => {
       {error && <ErrorMessage>{error}</ErrorMessage>}
       
       <Button type="submit" disabled={isLoading}>
-        {isLoading ? 'Creating...' : success ? 'Success!' : 'Create Superhero'}
+        {isLoading ? 'Creating...' :  'Create Superhero'}
       </Button>
     </FormContainer>
   );

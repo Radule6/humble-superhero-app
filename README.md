@@ -51,7 +51,7 @@ The Humble Superhero API is a simple REST API designed to celebrate team members
 
 
 ## 📁 Project Structure
-
+```json
 📦 humble-superhero-app
  ┣ 📂 backend
  ┃ ┣ 📂 src
@@ -103,6 +103,7 @@ The Humble Superhero API is a simple REST API designed to celebrate team members
  ┃ ┗ 📂 workflows
  ┃   ┗ 📜 keep-alive.yml
  ┗ 📜 README.md
+```
 
  ## API Endpoints:
 
