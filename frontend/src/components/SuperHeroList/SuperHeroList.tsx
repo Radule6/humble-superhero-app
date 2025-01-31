@@ -67,10 +67,6 @@ const SuperHeroList = () => {
     return <LoadingMessage>Loading superheroes...</LoadingMessage>;
   }
 
-  if (error) {
-    return <ErrorMessage>{error}</ErrorMessage>;
-  }
-
   return (
     <ListContainer $darkMode={darkMode}>
       {superheroes.map((hero) => (

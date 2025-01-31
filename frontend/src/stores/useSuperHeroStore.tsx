@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import axios from 'axios';
 
-// Types
+// Superhero Interface
 interface Superhero {
   id: number;
   name: string;
@@ -9,6 +9,7 @@ interface Superhero {
   humilityScore: number;
 }
 
+// Store Interface
 interface SuperheroStore {
   superheroes: Superhero[];
   isLoading: boolean;
@@ -39,16 +40,17 @@ const useSuperHeroStore = create<SuperheroStore>((set) => ({
   createSuperhero: async (superhero) => {
     set({ isLoading: true, error: null });
     try {
-      const response = await axios.post<Superhero>(
+      await axios.post<Superhero>(
         `${import.meta.env.VITE_API_URL}superheroes`,
         superhero
       );
-      set((state) => ({
-        superheroes: [...state.superheroes, response.data]
-      }));
+      const response = await axios.get<Superhero[]>(
+        `${import.meta.env.VITE_API_URL}superheroes`
+      );
+      set({ superheroes: response.data });
     } catch (error) {
       set({ error: error instanceof Error ? error.message : 'Failed to create superhero' });
-      throw error; // Re-throw to handle in the component
+      throw error;
     } finally {
       set({ isLoading: false });
     }
