@@ -1,0 +1,31 @@
+# Ignore backend & frontend dependencies
+backend/node_modules/
+frontend/node_modules/
+
+# Ignore build outputs
+backend/dist/
+frontend/dist/
+
+# Ignore environment variables
+backend/.env
+frontend/.env
+
+# Ignore IDE configurations
+.vscode/
+.idea/
+
+# Ignore macOS system files
+.DS_Store
+
+# Ignore Log files
+*.log
+
+# Ignore local temporary files
+*.swp
+*.swo
+
+# Ignore pnpm workspace files (if using pnpm)
+pnpm-lock.yaml
+
+# Ignore global dependency caches (optional)
+node_modules/
