@@ -3,6 +3,7 @@ name: Keep Render API Alive
 on:
   schedule:
     - cron: "*/10 * * * *" 
+  workflow_dispatch:
 
 jobs:
   ping_api:
