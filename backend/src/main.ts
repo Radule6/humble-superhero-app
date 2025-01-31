@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
-import { ValidationPipe } from '@nestjs/common';
+import { BadRequestException, ValidationPipe } from '@nestjs/common';
 
 async function bootstrap() {
 
@@ -9,7 +9,17 @@ async function bootstrap() {
   app.setGlobalPrefix('api/v1');
   app.enableCors();
 
-  app.useGlobalPipes(new ValidationPipe());
+  app.useGlobalPipes(new ValidationPipe({
+    whitelist: true,
+    forbidNonWhitelisted: true,
+    transform: true,
+    exceptionFactory: (errors) => {
+      const messages = errors.map(
+        err => `${err.property} ${Object.values(err.constraints ?? {}).join(', ')}`
+      );
+      return new BadRequestException(messages);
+    }
+  }));
 
   await app.listen(process.env.PORT ?? 3000);
 }
