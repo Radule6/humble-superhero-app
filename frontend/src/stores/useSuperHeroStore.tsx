@@ -18,6 +18,7 @@ interface SuperheroStore {
   createSuperhero: (superhero: Omit<Superhero, 'id'>) => Promise<void>;
 }
 
+//Superhero store to fetch and create superheroes
 const useSuperHeroStore = create<SuperheroStore>((set) => ({
   superheroes: [],
   isLoading: false,

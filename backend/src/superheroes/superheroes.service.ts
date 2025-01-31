@@ -1,7 +1,6 @@
 import { Injectable, BadRequestException } from '@nestjs/common';
 import { CreateSuperheroDto } from './dto/create-superhero.dto';
 
-
 /**
  * Superhero interface
  */
@@ -27,7 +26,11 @@ export class SuperheroesService {
    * @throws BadRequestException if a superhero with the same name already exists
    */
   create(createSuperheroDto: CreateSuperheroDto): Superhero {
-    if (this.superheroes.find((superhero) => superhero.name === createSuperheroDto.name)) {
+    if (
+      this.superheroes.find(
+        (superhero) => superhero.name === createSuperheroDto.name,
+      )
+    ) {
       throw new BadRequestException('Superhero with this name already exists');
     }
 
@@ -46,5 +49,5 @@ export class SuperheroesService {
    */
   findAll(): Superhero[] {
     return this.superheroes.sort((a, b) => b.humilityScore - a.humilityScore);
-  };
-};
+  }
+}
